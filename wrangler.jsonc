@@ -1,13 +1,9 @@
 {
-  // Nome del progetto su Cloudflare
   "name": "webapp-amulet-runaway",
-  
-  // Data di compatibilità per Wrangler
   "compatibility_date": "2026-07-20",
-  
-  // Configurazione fondamentale per servire la webapp React compilata da Vite
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   }
 }
