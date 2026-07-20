@@ -1,6 +1,6 @@
 // src/components/Button/Button.tsx
 import React from 'react';
-import './button.css';
+import './Button.css';
 
 // Estendiamo gli attributi nativi del bottone per non doverli riscrivere tutti
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,6 +1,6 @@
 // src/components/Scanner/Scanner.tsx
 import { useEffect } from 'react';
-import './scanner.css';
+import './Scanner.css';
 
 interface ScannerProps {
   image: string; 

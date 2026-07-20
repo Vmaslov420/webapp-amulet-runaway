@@ -1,7 +1,7 @@
 // src/components/Camera/Camera.tsx
 import { useEffect, useRef } from 'react';
 import { Button } from '../Button/Button';
-import './camera.css';
+import './Camera.css';
 
 interface CameraProps {
   // onCapture è una funzione che il componente padre (Scan) ci passa. 

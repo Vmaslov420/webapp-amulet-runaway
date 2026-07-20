@@ -1,6 +1,6 @@
 // src/components/Card/Card.tsx
 import type { Amulet } from '../../services/amuletSelector';
-import './card.css';
+import './Card.css';
 
 interface CardProps {
   amulet: Amulet;
