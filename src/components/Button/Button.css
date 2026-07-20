@@ -1,0 +1,46 @@
+/* src/components/Button/button.css */
+.glow-button {
+  background: var(--glass-bg);
+  border: 1px solid var(--neon-cyan);
+  color: var(--text-main);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  backdrop-filter: var(--glass-blur);
+  cursor: pointer;
+  /* Animazione fluida per il tocco */
+  transition: all 0.2s ease-in-out; 
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+/* Effetto quando si preme il pulsante su mobile */
+.glow-button:active {
+  transform: scale(0.92);
+  /* Aggiungiamo un'ombra interna (inset) per dare il senso di profondità */
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.8), inset 0 0 15px rgba(0, 240, 255, 0.5);
+  background: rgba(0, 240, 255, 0.25);
+  /* Transizione fulminea per il tocco */
+  transition: all 0.1s ease-out; 
+}
+
+/* Variante Viola */
+.glow-button.variant-purple {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 10px rgba(157, 78, 221, 0.2);
+}
+
+.glow-button.variant-purple:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 25px rgba(157, 78, 221, 0.8), inset 0 0 15px rgba(157, 78, 221, 0.5);
+  background: rgba(157, 78, 221, 0.25);
+  transition: all 0.1s ease-out;
+}

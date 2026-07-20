@@ -1,0 +1,142 @@
+/* src/components/Scanner/scanner.css */
+.scanner-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--neon-purple);
+  box-shadow: 0 0 30px rgba(157, 78, 221, 0.4);
+  aspect-ratio: 3/4; 
+  background-color: var(--bg-dark);
+}
+
+.scanner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Forza l'accelerazione hardware della scheda video del telefono (super trucco prestazionale) */
+  transform: translateZ(0); 
+  
+  /* Aggiungiamo il prefisso per Safari/iOS */
+  -webkit-animation: mystic-pulse 2.5s infinite alternate ease-in-out;
+  animation: mystic-pulse 2.5s infinite alternate ease-in-out;
+}
+
+/* Versione dell'animazione specifica per i motori WebKit (Safari, iOS) */
+@-webkit-keyframes mystic-pulse {
+  0% { 
+    -webkit-filter: grayscale(80%) contrast(150%) brightness(0.6) hue-rotate(0deg); 
+  }
+  100% { 
+    -webkit-filter: grayscale(30%) contrast(200%) brightness(1.2) hue-rotate(45deg); 
+  }
+}
+
+/* Versione standard per Chrome, Edge, Firefox */
+@keyframes mystic-pulse {
+  0% { 
+    filter: grayscale(80%) contrast(150%) brightness(0.6) hue-rotate(0deg); 
+  }
+  100% { 
+    filter: grayscale(30%) contrast(200%) brightness(1.2) hue-rotate(45deg); 
+  }
+}
+
+/* Griglia mistica a cerchi concentrici (simula le onde sonore di un subwoofer) */
+.scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent,
+    transparent 10px,
+    rgba(157, 78, 221, 0.15) 11px,
+    rgba(157, 78, 221, 0.15) 12px
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Radar spirituale che ruota (conic gradient) */
+.scanner-aura {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* Una sfumatura circolare che unisce il ciano e il viola */
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(0, 240, 255, 0.3) 90deg,
+    rgba(157, 78, 221, 0.6) 180deg,
+    transparent 270deg
+  );
+  /* Fa fondere il radar con la foto sottostante creando l'effetto fantasma */
+  mix-blend-mode: screen; 
+  animation: spin-aura 2s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Animazioni */
+@keyframes spin-aura {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes mystic-pulse {
+  0% { 
+    filter: grayscale(80%) contrast(150%) brightness(0.6) hue-rotate(0deg); 
+  }
+  100% { 
+    filter: grayscale(30%) contrast(200%) brightness(1.2) hue-rotate(45deg); 
+  }
+}
+
+/* src/components/Scanner/scanner.css */
+
+/* ... (mantieni tutto il codice precedente) ... */
+
+/* Il nuovo sfondo pulsante a tutto schermo */
+.scanner-page-bg {
+  position: fixed; /* Si attacca ai bordi del telefono */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Lo spingiamo dietro a tutto il resto */
+  
+  /* Gradiente radiale gigantesco */
+  background: radial-gradient(
+    circle at 50% 50%, 
+    rgba(157, 78, 221, 0.4), /* Viola neon */
+    var(--bg-dark) 40%, 
+    rgba(0, 240, 255, 0.3) 100% /* Ciano neon ai bordi */
+  );
+  background-size: 200% 200%; /* Lo facciamo più grande dello schermo per poterlo muovere */
+  
+  /* L'animazione lo fa respirare e spostare */
+  animation: pulse-bg 3s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+  0% { 
+    background-position: 0% 50%;
+    opacity: 0.3;
+  }
+  50% { 
+    background-position: 100% 50%;
+    opacity: 0.8; /* Diventa più luminoso a metà dell'analisi */
+  }
+  100% { 
+    background-position: 0% 50%;
+    opacity: 0.3;
+  }
+}

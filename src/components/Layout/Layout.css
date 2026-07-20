@@ -1,0 +1,50 @@
+/* src/components/Layout/layout.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Supporto per la barra del browser mobile (Dynamic Viewport Height) */
+  min-height: 100dvh; 
+  background-color: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  background-color: var(--glass-bg);
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* Effetto sfumatura neon sul testo */
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  max-width: 500px; /* Limite per non farlo sformare su tablet o schermi grandi */
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-footer {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--glass-border);
+}
