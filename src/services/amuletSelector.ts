@@ -10,6 +10,7 @@ export interface Amulet {
   description: string;
   color: string;
   rarity: string;
+  image: string;
 }
 
 /**

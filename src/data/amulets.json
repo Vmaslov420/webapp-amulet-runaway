@@ -4,20 +4,23 @@
     "name": "Scudo Quantico delle 04:00",
     "description": "Protegge la tua anima da clubber dai cali di energia e dai drink annacquati. Ricarica istantanea garantita.",
     "color": "#00F0FF",
-    "rarity": "Comune"
+    "rarity": "Comune",
+    "image": "/images/amulets/1.png"
   },
   {
     "id": "bass-resonance",
     "name": "Sintetizzatore Astrale",
     "description": "Sintonizza i battiti del tuo cuore sulle frequenze dei subwoofer del locale. Immunità totale alla stanchezza.",
     "color": "#9D4EDD",
-    "rarity": "Raro"
+    "rarity": "Raro",
+    "image": "/images/amulets/2.png"
   },
   {
     "id": "glitch-escape",
     "name": "Matrice del Ghosting Sicuro",
     "description": "Ti rende invisibile ai conoscenti molesti all'interno del locale. Scompari e riappari solo dove c'è la musica migliore.",
     "color": "#FFFFFF",
-    "rarity": "Epico"
+    "rarity": "Epico",
+    "image": "/images/amulets/3.png"
   }
 ]
