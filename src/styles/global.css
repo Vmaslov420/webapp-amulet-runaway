@@ -1,13 +1,12 @@
 /* src/styles/global.css */
 :root {
-  /* Colori del Tema */
+  /* Il tuo colore preferito */
   --bg-dark: #0B0C10;
   --neon-cyan: #00F0FF;
   --neon-purple: #9D4EDD;
   --text-main: #FFFFFF;
   --text-muted: rgba(255, 255, 255, 0.7);
 
-  /* Variabili per Glassmorphism fluido */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-blur: blur(12px);
@@ -19,13 +18,19 @@
   padding: 0;
 }
 
-body {
-  background-color: var(--bg-dark);
+/* Applichiamo il TUO colore a tutto il frame della pagina */
+html, 
+body, 
+#root {
+  width: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: var(--bg-dark) !important;
+  background: var(--bg-dark) !important;
   color: var(--text-main);
-  /* Usiamo i font di sistema nativi: zero millisecondi per scaricare font esterni */
   font-family: system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
-  
-  /* Fondamentale per Mobile: previene il fastidioso "rimbalzo" dello schermo */
   overscroll-behavior-y: none;
 }

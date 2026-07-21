@@ -12,8 +12,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="app-container">
-      <header className="app-header">
-      </header>
+
 
       <main className="app-main">
         {children}
