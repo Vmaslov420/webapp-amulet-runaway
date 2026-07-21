@@ -8,7 +8,7 @@
 
 /* --- STILI GENERALI --- */
 body, .home-container {
-  background-color: #000000;
+  background-color: var(--bg-dark);
   color: #ffffff;
   font-family: 'LincolnElectric-Regular', sans-serif;
   margin: 0;
@@ -129,7 +129,7 @@ body, .home-container {
   }
 }
 
-/* --- TITOLO CON FONT LINCOLNELECTRIC ED EFFETTI --- */
+/* --- TITOLO  --- */
 .header-title h1 {
   font-family: 'LincolnElectric-Regular', sans-serif;
   font-size: 38px;
