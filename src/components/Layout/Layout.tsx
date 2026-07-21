@@ -13,7 +13,6 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="app-container">
       <header className="app-header">
-        <div className="logo-text">Amulet Scan</div>
       </header>
 
       <main className="app-main">
@@ -21,7 +20,7 @@ export function Layout({ children }: LayoutProps) {
       </main>
 
       <footer className="app-footer">
-        <p>&copy; {currentYear} Associazione Studentesca No-Profit</p>
+        <p> SUPERSTIZIONI ELETTRONICHE VOL.3 •  {currentYear} </p>
       </footer>
     </div>
   );

@@ -40,7 +40,7 @@ export function Scan({ onScanComplete }: ScanProps) {
   // Altrimenti (stato iniziale), mostriamo la fotocamera
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-      <h2 style={{ color: 'var(--neon-purple)', marginBottom: '1.5rem', textAlign: 'center' }}>
+      <h2 style={{ color: 'var(--neon-grey', marginBottom: '1.5rem', textAlign: 'center' }}>
         Mantieni il viso visibile
       </h2>
       

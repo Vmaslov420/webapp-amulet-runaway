@@ -7,7 +7,7 @@
   border-radius: 20px;
   overflow: hidden;
   border: 2px solid var(--neon-purple);
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+  box-shadow: 0 0 15px rgb(1, 1, 1);
   /* Rapporto 3:4, perfetto per i ritratti frontali sui telefoni */
   aspect-ratio: 3/4; 
   background-color: var(--bg-dark);
@@ -19,7 +19,7 @@
   /* Assicura che il video riempia il riquadro senza deformarsi */
   object-fit: cover; 
   /* Effetto specchio: fondamentale per le fotocamere frontali! */
-  transform: scaleX(-1); 
+  
 }
 
 .camera-action-area {

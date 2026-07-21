@@ -17,7 +17,7 @@
   height: 100%;
   object-fit: cover;
   
-  /* Forza l'accelerazione hardware della scheda video del telefono (super trucco prestazionale) */
+  /* Forza l'accelerazione hardware della scheda video del telefono */
   transform: translateZ(0); 
   
   /* Aggiungiamo il prefisso per Safari/iOS */

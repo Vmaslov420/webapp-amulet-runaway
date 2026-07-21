@@ -1,0 +1,178 @@
+/* Importazione del font personalizzato */
+@font-face {
+  font-family: 'LincolnElectric-Regular';
+  src: url('/fonts/LincolnElectric-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- LAYOUT GENERALE SCANNER --- */
+.scan-container {
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  font-family: 'LincolnElectric-Regular', sans-serif;
+  height: 100vh;
+  height: 100dvh; /* Supporto dinamico per viewport mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  animation: fadeInPage 0.5s ease-out forwards;
+}
+
+/* Animazione di uscita quando si torna alla Home */
+.scan-container.page-exit {
+  animation: fadeOutPage 0.4s ease-in forwards !important;
+}
+
+/* --- HEADER CON FONT BIANCO PULITO --- */
+.scan-header {
+  margin-top: 10px;
+}
+
+.scan-header h2 {
+  font-family: 'LincolnElectric-Regular', sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  animation: none;
+  text-shadow: none;
+}
+
+.scan-header p {
+  font-family: 'LincolnElectric-Regular', sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* --- AREA DI SCANSIONE CENTRALIZZATA --- */
+.scanner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin: 20px 0;
+}
+
+.scanner-box {
+  width: 230px;  /* Dimensione ridotta */
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  
+  /* Stesso gradiente radiale della Home */
+  background: radial-gradient(circle at center, #2a2a2a 0%, #000000 75%);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Elemento HTML dello scanner QR */
+.qr-reader-element {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+.qr-reader-element video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Linea laser animata */
+.scan-laser {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff;
+  animation: scanMove 2.5s infinite ease-in-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.camera-error-text {
+  font-family: 'LincolnElectric-Regular', sans-serif;
+  font-size: 12px;
+  color: #ff6b6b;
+  text-align: center;
+  padding: 15px;
+  z-index: 11;
+}
+
+/* --- FOOTER E BOTTONE --- */
+.scan-footer {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.secondary-button {
+  font-family: 'LincolnElectric-Regular', sans-serif;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 14px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.secondary-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.secondary-button:active {
+  transform: scale(0.95);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutPage {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes scanMove {
+  0% { top: 5%; }
+  50% { top: 90%; }
+  100% { top: 5%; }
+}
