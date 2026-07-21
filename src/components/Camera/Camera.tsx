@@ -57,8 +57,8 @@ export function Camera({ onCapture }: CameraProps) {
     const context = canvas.getContext('2d');
     if (context) {
       // Specchiamo il canvas per far combaciare l'immagine con quello che vede l'utente
-      //context.translate(canvas.width, 0);
-      //context.scale(-1, 1);
+      context.translate(canvas.width, 0);
+      context.scale(-1, 1);
       
       // Disegniamo il fotogramma esatto bloccato in quel millisecondo
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);

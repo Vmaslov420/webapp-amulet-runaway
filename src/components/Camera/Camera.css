@@ -19,6 +19,7 @@
   /* Assicura che il video riempia il riquadro senza deformarsi */
   object-fit: cover; 
   /* Effetto specchio: fondamentale per le fotocamere frontali! */
+  transform: scaleX(-1);
   
 }
 
