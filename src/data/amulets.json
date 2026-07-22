@@ -1,26 +1,44 @@
 [
   {
-    "id": "cyber-protection",
-    "name": "Scudo Quantico delle 04:00",
-    "description": "Protegge la tua anima da clubber dai cali di energia e dai drink annacquati. Ricarica istantanea garantita.",
-    "color": "#00F0FF",
+    "id": "1",
+    "name": "Pips",
     "rarity": "Comune",
-    "image": "/images/amulets/1.png"
+    "description": "Incorci Pips nei corridoi, e alle spalle ti inizia ad urlare 'MI STAI AGGREDENDO!', mettiti al riparo prima che arrivano i rinforzi.",
+    "color": "#FF4500",
+    "image": "/images/amulets/pips.png"
   },
   {
-    "id": "bass-resonance",
-    "name": "Sintetizzatore Astrale",
-    "description": "Sintonizza i battiti del tuo cuore sulle frequenze dei subwoofer del locale. Immunità totale alla stanchezza.",
-    "color": "#9D4EDD",
+    "id": "2",
+    "name": "Mike de Rosa",
     "rarity": "Raro",
-    "image": "/images/amulets/2.png"
+    "description": "Il senatore non ha gradito il tuo sguardo, nasconditi nella sede piu vicina. ",
+    "color": "#00F0FF",
+    "image": "/images/amulets/mike.png"
   },
   {
-    "id": "glitch-escape",
-    "name": "Matrice del Ghosting Sicuro",
-    "description": "Ti rende invisibile ai conoscenti molesti all'interno del locale. Scompari e riappari solo dove c'è la musica migliore.",
-    "color": "#FFFFFF",
+    "id": "3",
+    "name": "Iovino l'Ex Deputato",
     "rarity": "Epico",
-    "image": "/images/amulets/3.png"
+    "description": "Si affaccia dalla porta della sede R.U.N. Salerno alla ricerca di Federica Toma e Leonardo Guarino, hai 5 secondi per inventare una scusa plausibile per mandarlo via, pensa in fretta.",
+    "color": "#2ECC71",
+    "image": "/images/amulets/iovino.png"
+  },
+
+  {
+    "id": "3",
+    "name": "La Santa Trinità",
+    "rarity": "Leggendario",
+    "description": "La santa trinità si sta organizzando per farti andare male la serata e per rubarti la sede, buttati in mezzo alla folla, rintracciali e ferma i loro piani malvagi...",
+    "color": "#2ECC71",
+    "image": "/images/amulets/trinits.png"
+  },
+
+   {
+    "id": "3",
+    "name": "Katia Famoso",
+    "rarity": "Ultra-Leggendario",
+    "description": "Non sai quando e come ma sai che sta per rubare l'omino della matita, hai due opzioni o ti unisci a lei o la fermi prima che la scopra Francesca Forgione.",
+    "color": "#2ECC71",
+    "image": "/images/amulets/katia.png"
   }
 ]
