@@ -20,12 +20,12 @@
     "name": "Iovino l'Ex Deputato",
     "rarity": "Epico",
     "description": "Si affaccia dalla porta della sede R.U.N. Salerno alla ricerca di Federica Toma e Leonardo Guarino, hai 5 secondi per inventare una scusa plausibile per mandarlo via, pensa in fretta.",
-    "color": "#2ECC71",
+    "color": "#FFFFFF",
     "image": "/images/amulets/iovino.png"
   },
 
   {
-    "id": "3",
+    "id": "4",
     "name": "La Santa Trinità",
     "rarity": "Leggendario",
     "description": "La santa trinità si sta organizzando per farti andare male la serata e per rubarti la sede, buttati in mezzo alla folla, rintracciali e ferma i loro piani malvagi...",
@@ -34,11 +34,52 @@
   },
 
    {
-    "id": "3",
+    "id": "5",
     "name": "Katia Famoso",
     "rarity": "Ultra-Leggendario",
     "description": "Non sai quando e come ma sai che sta per rubare l'omino della matita, hai due opzioni o ti unisci a lei o la fermi prima che la scopra Francesca Forgione.",
-    "color": "#2ECC71",
+    "color": "#FEA400",
     "image": "/images/amulets/katia.png"
+  },
+
+     {
+    "id": "6",
+    "name": "Thomas",
+    "rarity": "Epico",
+    "description": "Attenzione, il latin lover è in pista, non farti ammaliare.",
+    "color": "#FFFFFF",
+    "image": "/images/amulets/tommy.png"
+  },
+
+
+     {
+    "id": "7",
+    "name": "Giovanni Salvatore",
+    "rarity": "Presidente Onorario",
+    "description": "Un vecchio saggio una volta disse: 'Seguite i consigli del presidente onorario per evitare la multa durante la serata.'",
+    "color": "#FE019A",
+    "image": "/images/amulets/giov.png"
+  },
+
+
+     {
+    "id": "8",
+    "name": "Michele Calicchio",
+    "rarity": "Invisibile",
+    "description": "Non lo vedi ma ti osserva sempre, occhio alle tue mosse quando si parla di Runaway.",
+    "color": "#CCCCCC",
+    "image": "/images/amulets/calicchio.png"
+  },
+
+
+     {
+    "id": "9",
+    "name": "Francesca Forgione",
+    "rarity": "Epico",
+    "description": "Francesca Forgione ti sta interrogando sul piano di Katia, fai finta di non sapere niente o confessi tutto?",
+    "color": "#FFFFFF",
+    "image": "/images/amulets/forg.png"
   }
+
+
 ]
