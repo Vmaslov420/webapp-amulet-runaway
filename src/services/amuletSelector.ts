@@ -3,13 +3,19 @@
 // Importiamo il file JSON direttamente. TypeScript capisce in automatico la sua struttura!
 import amuletsData from '../data/amulets.json';
 
-// Definiamo come è fatto un amuleto, così TypeScript ci corregge se sbagliamo a scrivere
+// Tipo helper per i testi multilingua
+export type LocalizedString = string | {
+  it: string;
+  en: string;
+};
+
+// Definiamo come è fatto un amuleto per supportare sia stringhe che oggetti multilingua
 export interface Amulet {
   id: string;
-  name: string;
-  description: string;
+  name: LocalizedString;
+  description: LocalizedString;
   color: string;
-  rarity: string;
+  rarity: LocalizedString;
   image: string;
 }
 
@@ -38,7 +44,6 @@ export function getAmuletFromImage(base64Image: string): Amulet {
   const imageHash = hashStringToInt(base64Image);
   
   // 2. Usiamo il Modulo per trovare l'indice esatto nel nostro array
-  // amuletsData.length ci dice quanti amuleti abbiamo nel JSON (ora sono 3)
   const index = imageHash % amuletsData.length;
   
   // 3. Restituiamo l'amuleto corrispondente

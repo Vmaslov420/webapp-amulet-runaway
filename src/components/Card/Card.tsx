@@ -1,15 +1,32 @@
 // src/components/Card/Card.tsx
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
-import type { Amulet } from '../../services/amuletSelector';
+import type { Amulet, LocalizedString } from '../../services/amuletSelector';
+import { translations, type Language } from '../../data/translations';
 import './Card.css';
 
 interface CardProps {
   amulet: Amulet;
+  lang?: Language;
 }
 
-export function Card({ amulet }: CardProps) {
+export function Card({ amulet, lang = 'it' }: CardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+
+  // Recuperiamo le traduzioni per la lingua attiva
+  const activeLang = translations[lang] ? lang : 'it';
+  const t = translations[activeLang].card;
+
+  // Gestione dinamica per campi che potrebbero essere stringhe o oggetti multilingua
+  const getLocalizedText = (field: LocalizedString | undefined): string => {
+    if (!field) return '';
+    if (typeof field === 'string') return field;
+    return field[activeLang] || field.it || '';
+  };
+
+  const amuletName = getLocalizedText(amulet.name);
+  const amuletRarity = getLocalizedText(amulet.rarity);
+  const amuletDescription = getLocalizedText(amulet.description);
 
   const dynamicGlow = {
     borderColor: amulet.color,
@@ -46,7 +63,10 @@ export function Card({ amulet }: CardProps) {
       link.click();
       document.body.removeChild(link);
     } else {
-      alert("Impossibile generare l'immagine. Riprova tra un attimo.");
+      alert(activeLang === 'it' 
+        ? "Impossibile generare l'immagine. Riprova tra un attimo."
+        : "Unable to generate image. Please try again in a moment."
+      );
     }
   };
 
@@ -62,11 +82,16 @@ export function Card({ amulet }: CardProps) {
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: 'Il mio Amuleto',
-          text: `Ho scoperto il mio amuleto: ${amulet.name}!`,
+          title: activeLang === 'it' ? 'Il mio Amuleto' : 'My Amulet',
+          text: activeLang === 'it' 
+            ? `Ho scoperto il mio amuleto: ${amuletName}!`
+            : `I discovered my amulet: ${amuletName}!`,
         });
       } else {
-        alert("La condivisione diretta non è supportata dal browser desktop. L'immagine verrà scaricata automaticamente per permetterti di caricarla manualmente.");
+        alert(activeLang === 'it'
+          ? "La condivisione diretta non è supportata dal browser desktop. L'immagine verrà scaricata automaticamente per permetterti di caricarla manualmente."
+          : "Direct sharing is not supported on desktop browsers. The image will be downloaded automatically so you can upload it manually."
+        );
         handleDownload();
       }
     } catch (error) {
@@ -79,18 +104,18 @@ export function Card({ amulet }: CardProps) {
       {/* Scheda dell'amuleto */}
       <div className="glass-card" style={dynamicGlow} ref={cardRef}>
         <h3 className="card-title" style={dynamicTextGlow}>
-          {amulet.name}
+          {amuletName}
         </h3>
         
         <p className="card-rarity" style={{ color: amulet.color }}>
-          Rarità: {amulet.rarity}
+          {t.rarityPrefix}{amuletRarity}
         </p>
 
         {amulet.image && (
           <div className="card-image-container">
             <img 
               src={amulet.image} 
-              alt={amulet.name} 
+              alt={amuletName} 
               className="card-image" 
             />
           </div>
@@ -99,17 +124,17 @@ export function Card({ amulet }: CardProps) {
         <div className="card-divider" style={{ backgroundColor: amulet.color }}></div>
         
         <p className="card-description">
-          {amulet.description}
+          {amuletDescription}
         </p>
       </div>
 
       {/* Pulsanti sotto la card */}
       <div className="card-actions">
         <button className="action-btn download-btn" onClick={handleDownload}>
-          💾 Scarica Amuleto
+          {t.downloadBtn}
         </button>
         <button className="action-btn insta-btn" onClick={handleInstagramShare}>
-          📸 Condividi nelle Storie
+          {t.shareBtn}
         </button>
       </div>
     </div>

@@ -76,6 +76,57 @@ body, .home-container {
   box-sizing: border-box;
 }
 
+/* --- SELETTORE LINGUA CON IMMAGINI BANDIERE --- */
+.language-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s forwards;
+}
+
+.flag-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  outline: none;
+}
+
+/* Dimensione e resa delle icone delle bandiere */
+.flag-icon {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.flag-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.flag-btn:active {
+  transform: scale(0.95);
+}
+
+.flag-btn.active {
+  border-color: #00F0FF;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  background: rgba(0, 240, 255, 0.15);
+}
+
 /* --- TRANSIZIONE DI USCITA DALLA PAGINA --- */
 .main-content.page-exit {
   animation: fadeOutPage 0.4s ease-in forwards !important;
@@ -129,7 +180,7 @@ body, .home-container {
   }
 }
 
-/* --- TITOLO  --- */
+/* --- TITOLO --- */
 .header-title h1 {
   font-family: 'LincolnElectric-Regular', sans-serif;
   font-size: 38px;
@@ -139,7 +190,9 @@ body, .home-container {
   text-transform: uppercase;
   letter-spacing: 4px;
   color: #ffffff;
-  
+  padding: 0 6px; /* Evita il taglio delle lettere ai bordi */
+  overflow: visible;
+
   animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards, 
              pulseGlow 4s infinite 0.9s ease-in-out;
 }
@@ -166,6 +219,8 @@ body, .home-container {
   color: #aaaaaa;
   text-align: center;
   margin: 0;
+  padding: 0 4px;
+  overflow: visible;
 }
 
 .footer-title p {
@@ -175,6 +230,8 @@ body, .home-container {
   text-align: center;
   margin: 0;
   letter-spacing: 1px;
+  padding: 0 4px;
+  overflow: visible;
 }
 
 /* --- BOTTONE CON FONT PERSONALIZZATO --- */
@@ -189,6 +246,7 @@ body, .home-container {
   cursor: pointer;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: visible;
 }
 
 .primary-button:active {

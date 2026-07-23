@@ -4,17 +4,23 @@ import { Camera } from '../../components/Camera/Camera';
 import { Scanner } from '../../components/Scanner/Scanner';
 import { getAmuletFromImage } from '../../services/amuletSelector';
 import type { Amulet } from '../../services/amuletSelector';
+import { translations, type Language } from '../../data/translations';
 
 interface ScanProps {
   onScanComplete: (amulet: Amulet) => void;
+  lang?: Language;
 }
 
-export function Scan({ onScanComplete }: ScanProps) {
+export function Scan({ onScanComplete, lang = 'it' }: ScanProps) {
   // Memorizziamo la foto appena scattata
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
   
   // Memorizziamo l'amuleto calcolato, ma aspettiamo a passarlo all'App
   const [calculatedAmulet, setCalculatedAmulet] = useState<Amulet | null>(null);
+
+  // Otteniamo i testi per la fotocamera/scanner
+  const activeLang = translations[lang] ? lang : 'it';
+  const t = translations[activeLang].camera;
 
   // Questa funzione scatta istantaneamente quando clicchi "Analizza Anima"
   const handleCapture = (base64Image: string) => {
@@ -30,7 +36,8 @@ export function Scan({ onScanComplete }: ScanProps) {
   if (capturedImage && calculatedAmulet) {
     return (
       <Scanner 
-        image={capturedImage} 
+        image={capturedImage}
+        lang={activeLang} 
         // Quando lo Scanner ha finito i suoi 5 secondi, passiamo l'amuleto finale all'App
         onComplete={() => onScanComplete(calculatedAmulet)} 
       />
@@ -40,11 +47,11 @@ export function Scan({ onScanComplete }: ScanProps) {
   // Altrimenti (stato iniziale), mostriamo la fotocamera
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-      <h2 style={{ color: 'var(--neon-grey', marginBottom: '1.5rem', textAlign: 'center' }}>
-        Mantieni il viso visibile
+      <h2 style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', textAlign: 'center' }}>
+        {t.title}
       </h2>
       
-      <Camera onCapture={handleCapture} />
+      <Camera onCapture={handleCapture} lang={activeLang} />
     </div>
   );
 }

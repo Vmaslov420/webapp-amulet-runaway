@@ -1,14 +1,18 @@
 // src/components/Scanner/Scanner.tsx
 import { useEffect } from 'react';
+import { translations, type Language } from '../../data/translations';
 import './Scanner.css';
 
 interface ScannerProps {
   image: string; 
   onComplete: () => void; 
+  lang?: Language;
 }
 
-export function Scanner({ image, onComplete }: ScannerProps) {
-  
+export function Scanner({ image, onComplete, lang = 'it' }: ScannerProps) {
+  const activeLang = translations[lang] ? lang : 'it';
+  const t = translations[activeLang].scanner;
+
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
@@ -24,7 +28,7 @@ export function Scanner({ image, onComplete }: ScannerProps) {
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <h2 style={{ color: 'var(--neon-purple)', marginBottom: '1.5rem', textAlign: 'center', letterSpacing: '2px' }}>
-          Lettura in corso...
+          {t.reading}
         </h2>
         
         <div className="scanner-container">
@@ -34,7 +38,7 @@ export function Scanner({ image, onComplete }: ScannerProps) {
         </div>
         
         <p style={{ color: 'var(--neon-cyan)', marginTop: '1.5rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-          Sincronizzazione frequenze animiche...
+          {t.syncing}
         </p>
       </div>
     </>

@@ -1,85 +1,155 @@
 [
   {
-    "id": "1",
-    "name": "Pips",
-    "rarity": "Comune",
-    "description": "Incorci Pips nei corridoi, e alle spalle ti inizia ad urlare 'MI STAI AGGREDENDO!', mettiti al riparo prima che arrivano i rinforzi.",
-    "color": "#FF4500",
-    "image": "/images/amulets/pips.png"
-  },
-  {
-    "id": "2",
-    "name": "Mike de Rosa",
-    "rarity": "Raro",
-    "description": "Il senatore non ha gradito il tuo sguardo, nasconditi nella sede piu vicina. ",
+    "id": "nazar_1",
+    "name": {
+      "it": "L'Occhio Vigilante",
+      "en": "The Watchful Eye"
+    },
+    "description": {
+      "it": "Protegge la tua anima da clubber da cali di energia e drink annacquati. I classici cerchi concentrici blu e bianchi riflettono all'istante l'invidia e gli sguardi giudicanti direttamente a chi li ha mandati.",
+      "en": "Protects your clubber soul from energy crashes and watered-down drinks. The traditional blue and white concentric circles instantly reflect envy and judgey looks straight back to whoever sent them."
+    },
     "color": "#00F0FF",
-    "image": "/images/amulets/mike.png"
+    "rarity": {
+      "it": "Comune",
+      "en": "Common"
+    },
+    "image": "/images/amulets/amuleto_nazar_1.png"
   },
   {
-    "id": "3",
-    "name": "Iovino l'Ex Deputato",
-    "rarity": "Epico",
-    "description": "Si affaccia dalla porta della sede R.U.N. Salerno alla ricerca di Federica Toma e Leonardo Guarino, hai 5 secondi per inventare una scusa plausibile per mandarlo via, pensa in fretta.",
-    "color": "#FFFFFF",
-    "image": "/images/amulets/iovino.png"
+    "id": "nazar_2",
+    "name": {
+      "it": "Nazar Cyber-Scudo",
+      "en": "Cyber-Shield Nazar"
+    },
+    "description": {
+      "it": "Protegge la tua serata da pessimo Wi-Fi, angolazioni della fotocamera orribili e foto taggate poco lusinghiere. Il suo design al neon ad alto voltaggio spazza via la stanchezza sociale e mantiene la tua batteria al 100%.",
+      "en": "Shields your night out from bad WiFi, terrible phone angles, and unflattering tagged photos. Its high-voltage neon design zaps away social fatigue and keeps your battery at 100%, Cyber-level protection for your night."
+    },
+    "color": "#75eb21",
+    "rarity": {
+      "it": "Raro",
+      "en": "Rare"
+    },
+    "image": "/images/amulets/amuleto_nazar_2.png"
   },
-
   {
-    "id": "4",
-    "name": "La Santa Trinità",
-    "rarity": "Leggendario",
-    "description": "La santa trinità si sta organizzando per farti andare male la serata e per rubarti la sede, buttati in mezzo alla folla, rintracciali e ferma i loro piani malvagi...",
-    "color": "#2ECC71",
-    "image": "/images/amulets/trinits.png"
+    "id": "nazar_3",
+    "name": {
+      "it": "Nazar Supremo",
+      "en": "Supreme Nazar"
+    },
+    "description": {
+      "it": "Protegge le tue orecchie dal sovraccarico dei bassi e i tuoi piedi dalle scarpe scomode. La sua finitura madreperlacea assorbe la frenesia dei locali affollati, permettendoti di restare calmo e goderti la musica. La sua ernergia cosmica dissolve all'istante qualsiasi vibe negativa nel raggio di 10 metri.",
+      "en": "Saves your ears from bass overload and your feet from painful shoes. Its soothing mother-of-pearl finish absorbs the madness of packed venues so you can stay calm and enjoy the music.It'scosmic purple energy instantly dissolves any negative vibes within a 10-meter radius."
+    },
+    "color": "#9D4EDD",
+    "rarity": {
+      "it": "Epico",
+      "en": "Epic"
+    },
+    "image": "/images/amulets/amuleto_nazar_3.png"
   },
-
-   {
-    "id": "5",
-    "name": "Katia Famoso",
-    "rarity": "Ultra-Leggendario",
-    "description": "Non sai quando e come ma sai che sta per rubare l'omino della matita, hai due opzioni o ti unisci a lei o la fermi prima che la scopra Francesca Forgione.",
-    "color": "#FEA400",
-    "image": "/images/amulets/katia.png"
+  {
+    "id": "fatima_1",
+    "name": {
+      "it": "Mano del Destino",
+      "en": "Hamsa of Destiny"
+    },
+    "description": {
+      "it": "Sincronizza il tuo battito direttamente sulla frequenza del subwoofer, dona immunità totale alla stanchezza e protegge il tuo status VIP da sguardi gelosi e chiacchiere imbarazzanti.",
+      "en": "Syncs your heartbeat directly to the subwoofer frequency, grants total immunity to fatigue and protects your VIP status from jealous looks, awkward small talk, and people trying to steal your drink. Its royal gold filigree locks in your main character energy so you can rule the dance floor all night long."
+    },
+    "color": "#00F0FF",
+    "rarity": {
+      "it": "Comune",
+      "en": "Common"
+    },
+    "image": "/images/amulets/amuleto_fatima_1.png"
   },
-
-     {
-    "id": "6",
-    "name": "Thomas",
-    "rarity": "Epico",
-    "description": "Attenzione, il latin lover è in pista, non farti ammaliare.",
-    "color": "#FFFFFF",
-    "image": "/images/amulets/tommy.png"
+  {
+    "id": "fatima_2",
+    "name": {
+      "it": "Mano Lunare",
+      "en": "Lunar Hamsa"
+    },
+    "description": {
+      "it": "Alimentata dai raggi di luna e dall'intuito. Scuda la tua anima dall'energia caotica delle persone ubriache, blocca i vampiri emotivi ed evita che tu scriva al tuo ex alle 3 di notte.",
+      "en": "Powered by moonbeams and good intuition. Shields your soul from chaotic drunk energy, blocks emotional vampires, and makes sure you don't text your ex at 3 AM."
+    },
+    "color": "#75eb21",
+    "rarity": {
+      "it": "Raro",
+      "en": "Rare"
+    },
+    "image": "/images/amulets/amuleto_fatima_2.png"
   },
-
-
-     {
-    "id": "7",
-    "name": "Giovanni Salvatore",
-    "rarity": "Presidente Onorario",
-    "description": "Un vecchio saggio una volta disse: 'Seguite i consigli del presidente onorario per evitare la multa durante la serata.'",
-    "color": "#FE019A",
-    "image": "/images/amulets/giov.png"
+  {
+    "id": "fatima_3",
+    "name": {
+      "it": "Mano della Purità",
+      "en": "Hamsa of Purity"
+    },
+    "description": {
+      "it": "Difende il tuo cervello da falsi amici, drammi inutili e pessime richieste al DJ prima ancora che raggiungano le tue orecchie. Il suo design cristallino riflette l'energia tossica.",
+      "en": "Defends your brain from fake friends, loud drama, and terrible DJ requests before they even reach your ears. Its crystal-clear design reflects toxic energy right back, keeping your mind sharp and your drink safe."
+    },
+    "color": "#9D4EDD",
+    "rarity": {
+      "it": "Epico",
+      "en": "Epic"
+    },
+    "image": "/images/amulets/amuleto_cornicello_3.png"
   },
-
-
-     {
-    "id": "8",
-    "name": "Michele Calicchio",
-    "rarity": "Invisibile",
-    "description": "Non lo vedi ma ti osserva sempre, occhio alle tue mosse quando si parla di Runaway.",
-    "color": "#CCCCCC",
-    "image": "/images/amulets/calicchio.png"
+  {
+    "id": "corno_1",
+    "name": {
+      "it": "U' Curniciello",
+      "en": "U' Curniciello"
+    },
+    "description": {
+      "it": "Crea uno scudo invisibile che protegge il tuo outfit da drink versati, scarpe pestate e crampi a metà serata. Rosso, contorto e affilato, neutralizza all'istante le occhiatacce degli invidiosi.",
+      "en": "Creates an invisible force field that protects your outfit from spilled drinks, step-on-shoes accidents, and mid-dance cramp attacks, Red, twisted, and sharp, it instantly neutralizes side-eyes from haters so you can dance completely stress-free."
+    },
+    "color": "#00F0FF",
+    "rarity": {
+      "it": "Comune",
+      "en": "Common"
+    },
+    "image": "/images/amulets/amuleto_cornicello_1.png"
   },
-
-
-     {
-    "id": "9",
-    "name": "Francesca Forgione",
-    "rarity": "Epico",
-    "description": "Francesca Forgione ti sta interrogando sul piano di Katia, fai finta di non sapere niente o confessi tutto?",
-    "color": "#FFFFFF",
-    "image": "/images/amulets/forg.png"
+  {
+    "id": "corno_2",
+    "name": {
+      "it": "U' Curniciello Vesuviano",
+      "en": "U' Curniciello Vesuviano"
+    },
+    "description": {
+      "it": "Forgiato nelle oscure vibrazioni vulcaniche. Assorbe l'invidia silenziosa e i falsi sorrisi, trasformando ogni tentativo di rovinarti la serata in pura sicurezza di te.",
+      "en": "Forged in dark volcanic vibes. It absorbs quiet envy and fake smiles, turning every attempt to rain on your parade into pure, unfiltered confidence. Its volcanic finish shields your mysterious aura from annoying pickup lines and unwanted attention."
+    },
+    "color": "#75eb21",
+    "rarity": {
+      "it": "Raro",
+      "en": "Rare"
+    },
+    "image": "/images/amulets/amuleto_cornicello_2.png"
+  },
+  {
+    "id": "corno_3",
+    "name": {
+      "it": "U' Curniciello Luxury",
+      "en": "U' Curniciello Luxury"
+    },
+    "description": {
+      "it": "Protegge il tuo portafoglio dai costi d'ingresso spropositati attirando shot gratuiti e buone opportunità. Non si limita a bloccare la sfortuna: fa in modo che il barista noti prima te.",
+      "en": "Protects your wallet from overpriced cover charges while attracting free shots and golden opportunities. It doesn't just block bad luck—it makes sure the bartender notices you first."
+    },
+    "color": "#9D4EDD",
+    "rarity": {
+      "it": "Epico",
+      "en": "Epic"
+    },
+    "image": "/images/amulets/amuleto_cornicello_3.png"
   }
-
-
 ]

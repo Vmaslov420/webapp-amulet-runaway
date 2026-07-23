@@ -1,15 +1,21 @@
 // src/components/Camera/Camera.tsx
 import { useEffect, useRef } from 'react';
 import { Button } from '../Button/Button';
+import { translations, type Language } from '../../data/translations';
 import './Camera.css';
 
 interface CameraProps {
   // onCapture è una funzione che il componente padre (Scan) ci passa. 
   // La chiameremo passandogli la foto sotto forma di stringa di testo.
   onCapture: (base64Image: string) => void;
+  lang?: Language;
 }
 
-export function Camera({ onCapture }: CameraProps) {
+export function Camera({ onCapture, lang = 'it' }: CameraProps) {
+  // Recuperiamo le traduzioni per la lingua attiva
+  const activeLang = translations[lang] ? lang : 'it';
+  const t = translations[activeLang].camera;
+
   // 1. Creiamo i "ganci" (refs)
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -30,7 +36,7 @@ export function Camera({ onCapture }: CameraProps) {
         }
       } catch (error) {
         console.error("Errore nell'accesso alla fotocamera:", error);
-        alert("Per favore, consenti l'accesso alla fotocamera per continuare.");
+        alert(t.alertError);
       }
     }
 
@@ -43,7 +49,7 @@ export function Camera({ onCapture }: CameraProps) {
         streamRef.current.getTracks().forEach(track => track.stop());
       }
     };
-  }, []); // L'array vuoto [] significa: "Esegui questo effetto solo una volta all'avvio"
+  }, [t.alertError]);
 
   // 3. Il trucco per scattare la foto
   const takePhoto = () => {
@@ -82,7 +88,7 @@ export function Camera({ onCapture }: CameraProps) {
       </div>
       <div className="camera-action-area">
         <Button variant="purple" onClick={takePhoto}>
-          Analizza Anima
+          {t.button}
         </Button>
       </div>
     </>
