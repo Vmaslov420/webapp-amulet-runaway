@@ -52,21 +52,52 @@ export function Card({ amulet, lang = 'it' }: CardProps) {
     }
   };
 
-  // Handler per scaricare l'immagine su PC o Smartphone
+  // Helper per convertire un DataURL/Base64 in un oggetto File vero e proprio
+  const dataUrlToFile = async (dataUrl: string, fileName: string): Promise<File> => {
+    const res = await fetch(dataUrl);
+    const blob = await res.blob();
+    return new File([blob], fileName, { type: 'image/png' });
+  };
+
+  // Handler universale per scaricare/salvare l'immagine (iOS, Android, PC)
   const handleDownload = async () => {
     const dataUrl = await generateImage();
-    if (dataUrl) {
-      const link = document.createElement('a');
-      link.download = `amuleto-${amulet.id || 'runaway'}.png`;
-      link.href = dataUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
+    if (!dataUrl) {
       alert(activeLang === 'it' 
         ? "Impossibile generare l'immagine. Riprova tra un attimo."
         : "Unable to generate image. Please try again in a moment."
       );
+      return;
+    }
+
+    try {
+      const fileName = `amuleto-${amulet.id || 'runaway'}.png`;
+      const file = await dataUrlToFile(dataUrl, fileName);
+
+      // 1. SE SIAMO SU IOS / MOBILE con supporto alla condivisione di file
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: activeLang === 'it' ? 'Il mio Amuleto' : 'My Amulet',
+        });
+      } else {
+        // 2. FALLBACK PER ANDROID / DESKTOP (Download diretto tramite Blob)
+        const blobUrl = URL.createObjectURL(file);
+        const link = document.createElement('a');
+        link.download = fileName;
+        link.href = blobUrl;
+        document.body.appendChild(link);
+        link.click();
+        
+        // Pulizia
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+      }
+    } catch (error) {
+      // Ignora l'errore se l'utente annulla la condivisione su iOS
+      if ((error as Error).name !== 'AbortError') {
+        console.error("Errore durante il salvataggio:", error);
+      }
     }
   };
 
@@ -76,8 +107,8 @@ export function Card({ amulet, lang = 'it' }: CardProps) {
     if (!dataUrl) return;
 
     try {
-      const blob = await (await fetch(dataUrl)).blob();
-      const file = new File([blob], `amuleto-${amulet.id}.png`, { type: 'image/png' });
+      const fileName = `amuleto-${amulet.id}.png`;
+      const file = await dataUrlToFile(dataUrl, fileName);
 
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
@@ -95,7 +126,9 @@ export function Card({ amulet, lang = 'it' }: CardProps) {
         handleDownload();
       }
     } catch (error) {
-      console.error("Errore durante la condivisione:", error);
+      if ((error as Error).name !== 'AbortError') {
+        console.error("Errore durante la condivisione:", error);
+      }
     }
   };
 
